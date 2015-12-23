@@ -58,7 +58,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # linux setup assumes ubuntu, because that's what I use on vagrant.
-# TODO: let user specify INSTALL_CMD from command line
+# TODO: let user specify INSTALL_CMD as flag
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   INSTALL_CMD="sudo apt-get install"
 

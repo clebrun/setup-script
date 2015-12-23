@@ -39,7 +39,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
       brew doctor
-      brew update > /dev/null
     fi
 
     if which nvim > /dev/null; then

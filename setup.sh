@@ -58,11 +58,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   }
 fi
 
-# linux setup assumes ubuntu, because that's what I use on vagrant.
-# TODO: handle different linux distros and package managers
-# TODO: let user specify INSTALL_CMD as flag
 # if OS = Linux
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # linux setup assumes ubuntu, because that's what I use on vagrant.
+  # TODO: handle different linux distros and package managers
+  # TODO: let user specify INSTALL_CMD as flag
   INSTALL_CMD="sudo apt-get install"
 
   OS_PACKAGES="wget"

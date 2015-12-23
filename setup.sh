@@ -49,6 +49,25 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     function os_posthook {
       echo ''
+    }
+  }
+fi
+
+# linux setup assumes ubuntu, because that's what I use on vagrant.
+# TODO: let user specify INSTALL_CMD from command line
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  INSTALL_CMD="sudo apt-get install"
+
+  OS_PACKAGES="wget"
+
+  function os_prehook {
+    sudo apt-get update
+  }
+
+  function os_posthook {
+    git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv
+    mkdir $HOME/.rbenv/plugins
+    git clone git://github.com/rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
   }
 fi
 

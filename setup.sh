@@ -10,7 +10,8 @@ function pause {
 COMMON_PACKAGES="tree
 git
 zsh
-htop"
+htop
+tmux"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   INSTALL_CMD="brew install"

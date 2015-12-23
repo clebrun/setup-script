@@ -75,6 +75,8 @@ function pacmangr_installhook {
 # call prehooks
 os_prehook
 
+pacmangr_installhook
+
 # TODO:
   # doing this as user ?
     # use https github prefix

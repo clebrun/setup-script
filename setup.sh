@@ -48,11 +48,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
       brew doctor
     fi
 
-    if which nvim > /dev/null; then
-      echo "Neovim is already installed."
-    else
-      if [[ ! -d $HOME/.config ]]; then mkdir $HOME/.config; fi
-    fi
+    # make .config directory
+    if [[ ! -d $HOME/.config ]]; then mkdir $HOME/.config; fi
 
     function os_posthook {
       sudo chsh -s $(which zsh) $(whoami)

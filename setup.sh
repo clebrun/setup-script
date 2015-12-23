@@ -41,7 +41,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     else
       echo "If you haven't installed xcode and agreed to the
       license, do so now."
-      pause "Hit enter to continue after your finished."
+      pause "Hit enter to continue after your finished. "
 
       echo "Installing brew!"
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -123,9 +123,9 @@ if [[ -d $HOME/.ssh ]]; then
   cat $HOME/.ssh/id_rsa.pub
   printf "\n"
   echo "Please add the above public ssh key to your github account."
-  pause "Press enter once you've added the key."
+  pause "Press enter once you've added the key. "
 else
-  pause "Press enter if your ssh key (@ ~/.ssh/id_*.pub) is added to your github account."
+  pause "Press enter if your ssh key (@ ~/.ssh/id_*.pub) is added to your github account. "
 fi
 
 # clone dotfiles, nvim config and link

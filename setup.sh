@@ -48,7 +48,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     fi
 
     function os_posthook {
-      echo ''
+      sudo chsh -s $(which zsh) $(whoami)
     }
   }
 fi
@@ -68,6 +68,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv
     mkdir $HOME/.rbenv/plugins
     git clone git://github.com/rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+
+    sudo chsh -s $(which zsh) $(whoami)
   }
 fi
 

@@ -13,6 +13,12 @@ zsh
 htop
 tmux"
 
+# OS entries need 4 things:
+  # INSTALL_CMD
+  # OS_PACKAGES
+  # os_prehook
+  # os_posthook
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   INSTALL_CMD="brew install"
 

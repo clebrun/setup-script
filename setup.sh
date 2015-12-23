@@ -46,6 +46,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     else
       if [[ ! -d $HOME/.config ]]; then mkdir $HOME/.config; fi
     fi
+
+    function os_posthook {
+      echo ''
   }
 fi
 
@@ -105,4 +108,5 @@ git clone git@github.com:clebrun/nvim $HOME/.config/nvim
 echo "Don't forget to run nvim and :PluginInstall"
 
 # call posthooks
+os_posthook
 rbenv_posthook

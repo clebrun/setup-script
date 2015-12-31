@@ -138,7 +138,7 @@ echo "
 # that doesn't work when it's called from another script, or through a <() style call.
 # The dev environment script replaces the normal .zshrc wrapper with this file.
 ZSH_DIR=$HOME/.zsh
-source $ZSH_DIR/zshrc" > $HOME/.zshrc
+source $HOME/.zsh/zshrc" > $HOME/.zshrc
 
 # call posthooks
 os_posthook

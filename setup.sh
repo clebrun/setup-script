@@ -78,7 +78,7 @@ function rbenv_posthook {
   # make option to view version list and enter version to install
   rbenv rehash
   GEMS=(bundler pry rubocop)
-  for g in GEMS; do
+  for g in $GEMS; do
     gem install $g > /dev/null
   done
 }

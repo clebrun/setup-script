@@ -9,11 +9,7 @@ function pause {
 }
 
 # Packages that aren't platform specific
-COMMON_PACKAGES="tree
-git
-zsh
-htop
-tmux"
+COMMON_PACKAGES=(tree git zsh htop tmux) 
 
 # OS entries need 4 things:
   # INSTALL_CMD
@@ -28,13 +24,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # rbenv/ruby-build are available through brew. 
   # OS X doesn't have watch by default.
   # Don't ask me why neovim needs to be installed that way :|
-  OS_PACKAGES="rbenv
-  ruby-build
-  watch
-  Caskroom/cask/google-chrome
-  Caskroom/cask/flux
-  Caskroom/cask/slack
-  neovim/neovim/neovim"
+  OS_PACKAGES=(rbenv ruby-build watch Caskroom/cask/google-chrome Caskroom/cask/flux Caskroom/cask/slack neovim/neovim/neovim)
 
   function os_prehook {
     # Install OS X package manager
@@ -66,7 +56,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # TODO: let user specify INSTALL_CMD as flag
   INSTALL_CMD="sudo apt-get install"
 
-  OS_PACKAGES="wget"
+  OS_PACKAGES=(wget)
 
   function os_prehook {
     sudo apt-get update
@@ -85,9 +75,7 @@ function rbenv_posthook {
   # if rbenv install ruby version isn't already spec'd with flag
   # make option to view version list and enter version to install
   rbenv rehash
-  GEMS="bundler
-  pry
-  rubocop"
+  GEMS=(bundler pry rubocop)
   for g in GEMS; do
     gem install g > /dev/null
   done

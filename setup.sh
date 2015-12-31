@@ -2,6 +2,8 @@
 
 # A script that sets up dotfiles, preferred utilities, and neovim
 
+GITHUB_USERNAME="clebrun"
+
 function pause {
   read -p "$*"
 }
@@ -129,10 +131,10 @@ else
 fi
 
 # clone dotfiles, nvim config and link
-git clone git@github.com:clebrun/dotfiles $HOME/dotfiles > /dev/null
+git clone git@github.com:$GITHUB_USERNAME/dotfiles $HOME/dotfiles > /dev/null
 ln -s $HOME/dotfiles/{.zshrc,.gitconfig,.tmux.conf} $HOME/
 
-git clone git@github.com:clebrun/nvim $HOME/.config/nvim
+git clone git@github.com:$GITHUB_USERNAME/nvim $HOME/.config/nvim
 echo "Don't forget to run nvim and :PluginInstall"
 
 # call posthooks

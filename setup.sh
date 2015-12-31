@@ -60,7 +60,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   OS_PACKAGES=(wget)
 
   function os_prehook {
-    $PAC_MAN update
+    echo "Updating repos..."
+    $PAC_MAN update > /dev/null
   }
 
   function os_posthook {

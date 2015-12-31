@@ -83,10 +83,10 @@ function rbenv_posthook {
 }
 
 function pacmangr_installhook {
-  for pac in COMMON_PACKAGES; do
+  for pac in $COMMON_PACKAGES; do
     $INSTALL_CMD $pac > /dev/null
   done
-  for pac in OS_PACKAGES; do
+  for pac in $OS_PACKAGES; do
     $INSTALL_CMD $pac > /dev/null
   done
 }

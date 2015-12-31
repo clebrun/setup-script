@@ -52,7 +52,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # TODO: let user specify INSTALL_CMD as flag
   
   read -p "Please put in the package manager command, including sudo if needed.
-  e.g. apt-get
+  e.g. sudo apt-get, brew
   " PAC_MAN
 
   INSTALL_CMD="$PAC_MAN install"

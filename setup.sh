@@ -123,6 +123,8 @@ function clone_to {
   git clone git@github.com:$GITHUB_USERNAME/$1 $2 > /dev/null
 }
 
+ssh-keyscan github.com >> $HOME/.ssh/known_hosts
+
 clone_to dotfiles $HOME/dotfiles
 ln -s $HOME/dotfiles/{.gitconfig,.tmux.conf} $HOME/
 

@@ -49,15 +49,18 @@ fi
 
 # if OS = Linux
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  # linux setup assumes ubuntu, because that's what I use on vagrant.
-  # TODO: handle different linux distros and package managers
   # TODO: let user specify INSTALL_CMD as flag
-  INSTALL_CMD="sudo apt-get install"
+  
+  read -p "Please put in the package manager command, including sudo if needed.
+  e.g. apt-get
+  " PAC_MAN
+
+  INSTALL_CMD="$PAC_MAN install"
 
   OS_PACKAGES=(wget)
 
   function os_prehook {
-    sudo apt-get update
+    $PAC_MAN update
   }
 
   function os_posthook {

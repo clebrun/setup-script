@@ -38,13 +38,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   function os_prehook {
     # Install OS X package manager
+    echo "If you haven't installed xcode and agreed to the license, do so now."
+    pause "Hit enter to continue if you've agreed. "
+
     if which brew > /dev/null; then
       echo "Brew is already installed."
     else
-      echo "If you haven't installed xcode and agreed to the
-      license, do so now."
-      pause "Hit enter to continue after your finished. "
-
       echo "Installing brew!"
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 

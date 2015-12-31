@@ -7,7 +7,7 @@ function pause {
 }
 
 # Packages that aren't platform specific
-COMMON_PACKAGES=(tree git zsh htop tmux) 
+COMMON_PACKAGES="tree git zsh htop tmux"
 
 # OS entries need 4 things:
   # INSTALL_CMD

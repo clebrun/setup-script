@@ -1,5 +1,3 @@
-#!usr/bin/env bash
-
 # A script that sets up dotfiles, preferred utilities, and neovim
 
 GITHUB_USERNAME="clebrun"

@@ -133,6 +133,12 @@ echo "Don't forget to run nvim and :PluginInstall"
 
 clone_to zshrc $HOME/.zsh > /dev/null
 source $HOME/.zsh/setup_script
+echo "
+# The setup script used for zsh puts stuff here, but
+# that doesn't work when it's called from another script, or through a <() style call.
+# The dev environment script replaces the normal .zshrc wrapper with this file.
+ZSH_DIR=$HOME/.zsh
+source $ZSH_DIR/zshrc" > $HOME/.zshrc
 
 # call posthooks
 os_posthook

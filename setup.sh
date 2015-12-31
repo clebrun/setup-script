@@ -136,6 +136,9 @@ ln -s $HOME/dotfiles/{.zshrc,.gitconfig,.tmux.conf} $HOME/
 git clone git@github.com:$GITHUB_USERNAME/nvim $HOME/.config/nvim
 echo "Don't forget to run nvim and :PluginInstall"
 
+git clone git@github.com:$GITHUB_USERNAME/zshrc $HOME/.zsh
+echo "... and run setup_script in $HOME/.zsh"
+
 # call posthooks
 os_posthook
 rbenv_posthook

@@ -119,15 +119,18 @@ else
   pause "Press enter if your ssh key (@ ~/.ssh/id_*.pub) is added to your github account. "
 fi
 
-# clone dotfiles, nvim config and link
-git clone git@github.com:$GITHUB_USERNAME/dotfiles $HOME/dotfiles > /dev/null
-ln -s $HOME/dotfiles/{.zshrc,.gitconfig,.tmux.conf} $HOME/
+function clone_to {
+  git clone git@github.com:$GITHUB_USERNAME/$1 $2 > /dev/null
+}
 
-git clone git@github.com:$GITHUB_USERNAME/nvim $HOME/.config/nvim
+clone_to dotfiles $HOME/dotfiles
+ln -s $HOME/dotfiles/{.gitconfig,.tmux.conf} $HOME/
+
+clone_to nvim $HOME/.config/nvim
 echo "Don't forget to run nvim and :PluginInstall"
 
-git clone git@github.com:$GITHUB_USERNAME/zshrc $HOME/.zsh
-echo "... and run setup_script in $HOME/.zsh"
+clone_to zshrc $HOME/.zsh
+source $HOME/.zsh/setup_script
 
 # call posthooks
 os_posthook

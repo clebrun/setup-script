@@ -65,9 +65,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   }
 
   function os_posthook {
-    git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv
+    git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv > /dev/null
     mkdir $HOME/.rbenv/plugins
-    git clone git://github.com/rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+    git clone git://github.com/rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build > /dev/null
 
     sudo chsh -s $(which zsh) $(whoami)
   }
@@ -125,13 +125,13 @@ function clone_to {
 
 ssh-keyscan github.com >> $HOME/.ssh/known_hosts
 
-clone_to dotfiles $HOME/dotfiles
+clone_to dotfiles $HOME/dotfiles > /dev/null
 ln -s $HOME/dotfiles/{.gitconfig,.tmux.conf} $HOME/
 
-clone_to nvim $HOME/.config/nvim
+clone_to nvim $HOME/.config/nvim > /dev/null
 echo "Don't forget to run nvim and :PluginInstall"
 
-clone_to zshrc $HOME/.zsh
+clone_to zshrc $HOME/.zsh > /dev/null
 source $HOME/.zsh/setup_script
 
 # call posthooks

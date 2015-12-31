@@ -78,16 +78,16 @@ function rbenv_posthook {
   rbenv rehash
   GEMS=(bundler pry rubocop)
   for g in GEMS; do
-    gem install g > /dev/null
+    gem install $g > /dev/null
   done
 }
 
 function pacmangr_installhook {
   for pac in COMMON_PACKAGES; do
-    eval "$INSTALL_CMD pac" > /dev/null
+    $INSTALL_CMD $pac > /dev/null
   done
   for pac in OS_PACKAGES; do
-    eval "$INSTALL_CMD pac" > /dev/null
+    $INSTALL_CMD $pac > /dev/null
   done
 }
 

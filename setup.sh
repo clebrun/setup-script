@@ -131,14 +131,16 @@ ln -s $HOME/dotfiles/{.gitconfig,.tmux.conf} $HOME/
 clone_to nvim $HOME/.config/nvim > /dev/null
 echo "Don't forget to run nvim and :PluginInstall"
 
-clone_to zshrc $HOME/.zsh > /dev/null
-source $HOME/.zsh/setup_script
+ZSH_DIR=$HOME/.zsh
+clone_to zshrc $ZSH_DIR > /dev/null
+source $ZSH_DIR/setup_script
 echo "
 # The setup script used for zsh puts stuff here, but
 # that doesn't work when it's called from another script, or through a <() style call.
 # The dev environment script replaces the normal .zshrc wrapper with this file.
-ZSH_DIR=$HOME/.zsh
-source $HOME/.zsh/zshrc" > $HOME/.zshrc
+ZSH_DIR=$ZSH_DIR
+source $ZSH_DIR/zshrc" > $HOME/.zshrc
+ln -s $ZSH_DIR/all_modules/* $ZSH_DIR/used_modules
 
 # call posthooks
 os_posthook
